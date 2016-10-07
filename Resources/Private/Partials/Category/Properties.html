@@ -1,0 +1,6 @@
+<select name="subCategory{category.uid}">
+	<option value="0"><f:translate key="tx_infinitefilter_domain_model_category.selectone" /></option>
+	<f:for each="{category.categoryRel}" as="subcategory">
+		<option value="{subcategory.uid}">{subcategory.title}</option>
+	</f:for>
+</select>

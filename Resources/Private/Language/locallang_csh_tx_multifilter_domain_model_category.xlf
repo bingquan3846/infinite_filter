@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-12-18T11:32:44Z" product-name="infinite_filter">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="top.description">
+				<source>top</source>
+			</trans-unit>
+			<trans-unit id="category_rel.description">
+				<source>categoryRel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

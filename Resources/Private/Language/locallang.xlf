@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-12-18T11:32:44Z" product-name="infinite_filter">
+		<header/>
+		<body>
+			<trans-unit id="tx_infinitefilter_domain_model_searchobject">
+				<source>Search Object</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_searchobject.obj_content">
+				<source>Obj Content</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_searchobject.country">
+				<source>From contents</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_searchobject.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_category.top">
+				<source>Top</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_category.category_rel">
+				<source>Sub Category</source>
+			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_category.selectone">
+				<source>Choose..</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

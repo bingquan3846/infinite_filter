@@ -1,0 +1,62 @@
+
+plugin.tx_infinitefilter {
+	view {
+		templateRootPath = {$plugin.tx_infinitefilter.view.templateRootPath}
+		partialRootPath = {$plugin.tx_infinitefilter.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_infinitefilter.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_infinitefilter.persistence.storagePid}
+		enableAutomaticCacheClearing = 1
+		updateReferenceIndex = 0
+		classes {
+			Stilbezirk\InfiniteFilter\Domain\Model\Content {
+				mapping {
+					tableName = tt_content
+					columns {
+						uid.mapOnProperty = uid
+						CType.mapOnProperty = contentType
+					}
+				}
+			}
+		}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_infinitefilter._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-multi-filter table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-multi-filter table th {
+		font-weight:bold;
+	}
+
+	.tx-multi-filter table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

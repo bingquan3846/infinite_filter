@@ -1,0 +1,114 @@
+
+<f:layout name="Default" />
+
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+    <script type="text/javascript">
+        ( function ($) {
+            $.fn.infinitefilter = function(params){
+                var index = 1;
+                this.each(function(){
+                    var $obj = $(this);
+                    init($obj);
+                    applyChangeEvent($obj);
+                });
+
+                function init($obj){
+
+                    $obj.find('.level > select').css('display', 'none').val(0);
+                    $obj.find('.level > select[name="topCategory"]').css('display', 'block');
+                    $obj.find('.result').html('');
+                }
+
+
+                function applyChangeEvent($obj){
+                    $obj.find('select').on('change', function(){
+                        var selectVal = $(this).val();
+                        $obj.parent().find('.result').html('');
+                        //console.log(selectVal);
+                        //remove subcategory
+                        var $parent = $(this).parent();
+                        var level = $parent.data('level');
+                        index = $parent.data('level');
+                        $('.level').each(function(){
+                            if($(this).data('level') > level){
+                                $(this).remove();
+                            }
+                        });
+                        if(selectVal != 0){
+                            ajaxRequest($obj.parent(),selectVal);
+                        }
+
+
+                    });
+                }
+
+                function ajaxRequest($obj,category){
+                    var objLink = $('input[name="ajaxLink"]').val();
+                    var catLink = $('input[name="showCategory"]').val();
+                    $.ajax({
+                        type : "GET",
+                        url  : catLink + '&tx_infinitefilter_filter[category]='+category,
+                        success:function (html){
+                            if(html != ''){
+                                index++;
+                                $('<div class="level" data-level="' + index + '" id ="subcategory' + index + '">' + html +'</div>').insertBefore($('.result'));
+                                applyChangeEvent($('#subcategory' + index ));
+                            }
+
+                            $.ajax({
+                                type : "GET",
+                                url  : objLink + '&tx_infinitefilter_filter[category]='+category,
+                                success:function (html){
+                                    $obj.find('.result').html(html);
+                                }
+                            });
+                        }
+                    });
+                }
+            };
+
+        }( jQuery));
+
+        $(document).ready(function(){
+            $('.infinitefilter').infinitefilter();
+        });
+    </script>
+
+<f:flashMessages renderMode="div" />
+
+    <div class="infinitefilter">
+        <input type="hidden" value='<f:uri.action  action="list" controller="SearchObject" noCacheHash="1"></f:uri.action>' name="ajaxLink" />
+        <input type="hidden" value='<f:uri.action  action="show" controller="Category" noCacheHash="1"></f:uri.action>' name="showCategory" />
+
+        <div class="level" data-level="1">
+            <select name="topCategory" class="level1" data-level="1">
+                     <option value="0"><f:translate key="tx_infinitefilter_domain_model_category.selectone" /></option>
+                <f:for each="{categories}" as="category">
+                     <option value="{category.uid}">{category.title}</option>
+                </f:for>
+            </select>
+        </div>
+
+        <div class="result">
+
+        </div>
+
+    </div>
+
+
+</f:section>
+
