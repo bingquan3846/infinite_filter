@@ -16,7 +16,7 @@ If you read this on GitHub, please be aware that this repository is just a mirro
 4) Create the category and search object in backend using list module
 
 5) Create plugin content in page and select top category.
-[![solarized dualmode](https://github.com/bingquan3846/infinite_filter/tree/master/Documentation/Images/root.png)](#features)
+[!(https://github.com/bingquan3846/infinite_filter/tree/master/Documentation/Images/root.png)]
 (https://github.com/bingquan3846/infinite_filter/tree/master/Documentation/Images/root.png)
 (https://github.com/bingquan3846/infinite_filter/tree/master/Documentation/Images/from grandmon to find me .png)
 ![ScreenShot](https://github.com/bingquan3846/infinite_filter/tree/master/Documentation/Images/from grandfather to find me .png)
