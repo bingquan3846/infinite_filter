@@ -1,6 +1,9 @@
 # TYPO3 Extension "infinite_filter"
 
-Versatile news extension, based on extbase & fluid. Editor friendly, default integration of social sharing and many other features
+Infinite filter extension, based on extbase & fluid. Editor friendly.
+define your own logic to guide user to correct result.
+
+Result is related to text, tt_content, pages.
 
 ## If you read this on GitHub.com
 
