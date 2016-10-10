@@ -30,6 +30,9 @@
 			<trans-unit id="tx_infinitefilter_domain_model_category.selectone">
 				<source>Choose..</source>
 			</trans-unit>
+			<trans-unit id="tx_infinitefilter_domain_model_searchobject.internalurl">
+				<source>Link to page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

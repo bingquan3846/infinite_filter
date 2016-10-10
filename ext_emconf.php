@@ -1,15 +1,5 @@
 <?php
 
-/***************************************************************
- * Extension Manager/Repository config file for ext "multi_filter".
- *
- * Auto generated 06-10-2016 16:56
- *
- * Manual updates:
- * Only the data in the array - everything else is removed by next
- * writing. "version" and "dependencies" must not be touched!
- ***************************************************************/
-
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Infinite Filter',
 	'description' => '',
@@ -20,7 +10,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'uploadfolder' => false,
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '1.1.0',
+	'version' => '2.0.0',
 	'constraints' => 
 	array (
 		'depends' => 

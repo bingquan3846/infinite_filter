@@ -67,11 +67,10 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 		$contents = $this->contentRepository->getContentByUid(193);
 
-		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($contents);
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($contents);
 		$this->view->assign('contents', $contents);
 
         $uid = '';
-
         if($this->settings['topcategory'] != ''){
             $uid = $this->settings['topcategory'];
         }
@@ -83,10 +82,6 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         }
 
 		$this->view->assign('categories', $return_cat);
-
-	}
-
-	public function getSubCategoryAction(){
 
 	}
 

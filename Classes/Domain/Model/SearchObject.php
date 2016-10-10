@@ -60,6 +60,13 @@ class SearchObject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $content = NULL;
 
 	/**
+	 * internalurl
+	 *
+	 * @var string
+     */
+	protected $internalurl = NULL;
+
+	/**
 	 * __construct
 	 */
 	public function __construct() {
@@ -191,6 +198,23 @@ class SearchObject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	{
 		return $this->content;
 	}
+
+	/**
+	 * @return string
+	 */
+	public function getInternalurl()
+	{
+		return $this->internalurl;
+	}
+
+	/**
+	 * @param string $internalurl
+	 */
+	public function setInternalurl($internalurl)
+	{
+		$this->internalurl = $internalurl;
+	}
+
 
 
 }

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_infinitefilter_domain_model_searchobject'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_infinitefilter_domain_model_searchobject']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, obj_content, country, category',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, obj_content, content , internalurl, category',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, obj_content;;;richtext:rte_transform[mode=ts_links], content, category, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, obj_content;;;richtext:rte_transform[mode=ts_links], content, internalurl, category, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -142,6 +142,32 @@ $GLOBALS['TCA']['tx_infinitefilter_domain_model_searchobject'] = array(
 					),
 				),
 			),
+		),
+		'internalurl' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:infinite_filter/Resources/Private/Language/locallang_db.xlf:tx_infinitefilter_domain_model_searchobject.internalurl',
+			'config' => array(
+				'type' => 'input',
+				'size' => '30',
+				'max' => '255',
+				'eval' => 'trim',
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:header_link_formlabel',
+						'icon' => 'link_popup.gif',
+						'module' => array(
+							'name' => 'wizard_element_browser',
+							'urlParameters' => array(
+								'mode' => 'wizard'
+							)
+						),
+						'JSopenParams' => 'height=600,width=800,status=0,menubar=0,scrollbars=1'
+					)
+				),
+				'softref' => 'typolink'
+			)
 		),
 		'category' => array(
 			'exclude' => 1,

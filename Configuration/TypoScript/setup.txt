@@ -15,6 +15,7 @@ plugin.tx_infinitefilter {
 					tableName = tt_content
 					columns {
 						uid.mapOnProperty = uid
+						pid.mapOnProperty = pid
 						CType.mapOnProperty = contentType
 					}
 				}

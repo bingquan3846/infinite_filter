@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bingquan Bao
- * Date: 07.10.2016
- * Time: 11:36
- */
 
 namespace Stilbezirk\InfiniteFilter\Domain\Model;
 
 
+/**
+ * Class Content
+ * @package Stilbezirk\InfiniteFilter\Domain\Model
+ */
 class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * uid
@@ -16,6 +14,13 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * @var string
      */
     protected $uid = '';
+
+    /**
+     * pid
+     *
+     * @var string
+     */
+    protected $pid = '';
 
     /**
      * contentType
@@ -54,6 +59,22 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     public function setContentType($contentType)
     {
         $this->contentType = $contentType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPid()
+    {
+        return $this->pid;
+    }
+
+    /**
+     * @param string $pid
+     */
+    public function setPid($pid)
+    {
+        $this->pid = $pid;
     }
 
 

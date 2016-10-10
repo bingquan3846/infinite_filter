@@ -9,6 +9,7 @@ CREATE TABLE tx_infinitefilter_domain_model_searchobject (
 	obj_content text NOT NULL,
   content varchar(255) DEFAULT '' NOT NULL,
 	category int(11) unsigned DEFAULT '0' NOT NULL,
+	internalurl text,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
